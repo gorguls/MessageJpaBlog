@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Документ без названия</title>
+    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="../css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+
+<div class="estimate-form">
+    <div class="bw-estimate-middle">
+        <form action="addMessage" method="post">
+            <div class="clearfix">
+                <div class="form-group col-lg-12">
+                    <input type="text" name="name" placeholder="Имя" required="">
+                </div>
+                <div class="form-group col-lg-12">
+                    <input type="email" name="email" placeholder="Email" required="">
+                </div>
+                <div class="form-group col-lg-12">
+                    <textarea rows="5" name="message" placeholder="Сообщение"></textarea>
+                </div>
+                <div class="form-group col-lg-12">
+                    <input type="submit" class="theme-btn btn-style-two" value="ОСТАВИТЬ СООБЩЕНИЕ" >
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="estimate-form">
+    <div class="bw-estimate-middle">
+        <form action="filter" method="post">
+            <div class="clearfix">
+                <div class="form-group col-lg-12">
+                    <input type="text" name="filter" placeholder="Фильтр по имени">
+                </div>
+                <div class="form-group col-lg-12">
+                    <input type="submit" class="theme-btn btn-style-two" value="Применить фильтр" >
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+{{#messages}}
+<div class="estimate-form">
+    <ul class="bw-estimate-middle">
+
+        <li class="message">
+            <div class="message-header">
+                <div class="message-header-id">Сообщение № {{id}}</div>
+                <div class="message-header-name">{{name}}</div>
+                <div class="message-header-email">{{email}}</div>
+            </div>
+            <div class="message-text">{{text}}</div>
+        </li>
+
+    </ul>
+</div>
+{{/messages}}
+
+</body>
+</html>
